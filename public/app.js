@@ -18,7 +18,7 @@ const state = { mood: null, category: "Все", spice: "all" };
 function thumb(d) {
   return d.image
     ? `<img class="thumb-img" src="${esc(d.image)}" alt="${esc(d.name)}" loading="lazy">`
-    : `<div class="thumb">${esc(d.name.charAt(0).toUpperCase())}</div>`;
+    : `<div class="thumb">${getDishIcon(d)}</div>`;
 }
 
 function badges(d) {
