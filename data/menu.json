@@ -1,0 +1,321 @@
+[
+  {
+    "id": "capu",
+    "name": "Капучино",
+    "desc": "Классический молочный кофе с мягкой пенкой.",
+    "price": 900,
+    "category": "Напитки",
+    "spice": 0,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "бодрость",
+      "уют"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "matcha",
+    "name": "Матча-латте",
+    "desc": "Чай матча с молоком, лёгкая сладость.",
+    "price": 1200,
+    "category": "Напитки",
+    "spice": 0,
+    "temp": "hot",
+    "sweet": true,
+    "tags": [
+      "свежесть",
+      "уют",
+      "стресс"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "lemonade",
+    "name": "Лимонад «Огурец-мята»",
+    "desc": "Освежающий холодный напиток без сахара.",
+    "price": 1100,
+    "category": "Напитки",
+    "spice": 0,
+    "temp": "cold",
+    "sweet": false,
+    "tags": [
+      "свежесть",
+      "злюсь"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "cocoa",
+    "name": "Горячий шоколад",
+    "desc": "Насыщенный, с лёгкой нотой корицы.",
+    "price": 1300,
+    "category": "Напитки",
+    "spice": 0,
+    "temp": "hot",
+    "sweet": true,
+    "tags": [
+      "уют",
+      "сладкое",
+      "грустно"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "seaberry",
+    "name": "Облепиховый чай",
+    "desc": "Тёплый, согревающий, с мёдом.",
+    "price": 900,
+    "category": "Напитки",
+    "spice": 0,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "уют",
+      "грустно",
+      "устал",
+      "стресс"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "chilicoffee",
+    "name": "Кофе с чили и шоколадом",
+    "desc": "Мокка с щепоткой красного перца — бодрит и согревает.",
+    "price": 1400,
+    "category": "Напитки",
+    "spice": 1,
+    "temp": "hot",
+    "sweet": true,
+    "tags": [
+      "бодрость",
+      "скучно"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "cheesecake",
+    "name": "Чизкейк Нью-Йорк",
+    "desc": "Классический сливочный чизкейк.",
+    "price": 1500,
+    "category": "Десерты",
+    "spice": 0,
+    "temp": "cold",
+    "sweet": true,
+    "tags": [
+      "сладкое",
+      "уют",
+      "грустно"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "eclair",
+    "name": "Эклер",
+    "desc": "С заварным кремом, лёгкая хрустящая корочка.",
+    "price": 800,
+    "category": "Десерты",
+    "spice": 0,
+    "temp": "cold",
+    "sweet": true,
+    "tags": [
+      "сладкое",
+      "бодрость"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "brownie",
+    "name": "Тёплый брауни с мороженым",
+    "desc": "Горячий шоколадный брауни и шарик пломбира.",
+    "price": 1700,
+    "category": "Десерты",
+    "spice": 0,
+    "temp": "hot",
+    "sweet": true,
+    "tags": [
+      "сладкое",
+      "грустно",
+      "уют"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "fruitsalad",
+    "name": "Фруктовый салат с йогуртом",
+    "desc": "Лёгкий, свежий, в меру сладкий.",
+    "price": 1000,
+    "category": "Десерты",
+    "spice": 0,
+    "temp": "cold",
+    "sweet": true,
+    "tags": [
+      "свежесть",
+      "сладкое",
+      "стресс"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "shakshuka",
+    "name": "Шакшука",
+    "desc": "Яйца в томатном соусе с паприкой, слегка пикантная.",
+    "price": 1600,
+    "category": "Закуски",
+    "spice": 1,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "сытно",
+      "бодрость"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "wings",
+    "name": "Крылышки баффало",
+    "desc": "Куриные крылышки в остром соусе, подаются с сельдереем.",
+    "price": 2000,
+    "category": "Закуски",
+    "spice": 3,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "злюсь",
+      "скучно",
+      "сытно"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "broth",
+    "name": "Куриный бульон с лапшой",
+    "desc": "Лёгкий, но сытный — когда устал(а) или простыл(а).",
+    "price": 1400,
+    "category": "Супы",
+    "spice": 0,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "устал",
+      "грустно",
+      "сытно"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "tomyum",
+    "name": "Том ям",
+    "desc": "Острый кисло-пряный суп с креветками и кокосовым молоком.",
+    "price": 2400,
+    "category": "Супы",
+    "spice": 3,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "злюсь",
+      "скучно",
+      "бодрость"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "lagman",
+    "name": "Лагман",
+    "desc": "Домашняя лапша с мясом и овощами, средней остроты.",
+    "price": 1900,
+    "category": "Супы",
+    "spice": 2,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "сытно",
+      "устал",
+      "злюсь"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "sandwich",
+    "name": "Сэндвич с курицей и авокадо",
+    "desc": "Сытно и сбалансированно, на цельнозерновом хлебе.",
+    "price": 1800,
+    "category": "Основные блюда",
+    "spice": 0,
+    "temp": "cold",
+    "sweet": false,
+    "tags": [
+      "сытно",
+      "бодрость"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "alfredo",
+    "name": "Паста Альфредо",
+    "desc": "Сливочный соус, пармезан, много уюта в тарелке.",
+    "price": 2200,
+    "category": "Основные блюда",
+    "spice": 0,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "сытно",
+      "уют",
+      "грустно",
+      "устал"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "arrabbiata",
+    "name": "Паста арабьята",
+    "desc": "Томатный соус с перцем чили и чесноком.",
+    "price": 2100,
+    "category": "Основные блюда",
+    "spice": 2,
+    "temp": "hot",
+    "sweet": false,
+    "tags": [
+      "сытно",
+      "злюсь",
+      "скучно"
+    ],
+    "image": null,
+    "available": true
+  },
+  {
+    "id": "salmonbowl",
+    "name": "Боул с лососем и киноа",
+    "desc": "Лосось, киноа, овощи, цитрусовая заправка.",
+    "price": 2500,
+    "category": "Основные блюда",
+    "spice": 0,
+    "temp": "cold",
+    "sweet": false,
+    "tags": [
+      "сытно",
+      "свежесть",
+      "стресс"
+    ],
+    "image": null,
+    "available": true
+  }
+]
