@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MoodMenu — админка</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero" style="padding:36px 20px 28px">
+  <a class="nav-link" href="index.html">← На сайт</a>
+  <h1 class="title" style="font-size:32px">Управление меню</h1>
+  <p class="tagline">Добавляйте блюда, указывайте состав и аллергены, задавайте категорию, остроту и настроения.</p>
+</header>
+
+<div class="wrap" style="padding-top:28px">
+
+  <div class="panel" id="loginPanel">
+    <h2>Вход</h2>
+    <label class="f">Пароль администратора
+      <input class="input" type="password" id="pwd" placeholder="значение ADMIN_PASSWORD из файла .env">
+    </label>
+    <div class="row-actions"><button class="btn" id="loginBtn">Войти</button></div>
+    <div class="msg" id="loginMsg"></div>
+  </div>
+
+  <div id="adminArea" style="display:none">
+    <div class="panel">
+      <h2 id="formTitle">Новое блюдо</h2>
+      <form id="dishForm" class="form-grid">
+        <label class="f">Название <input class="input" name="name" required></label>
+        <label class="f">Цена, ₸ <input class="input" name="price" type="number" min="0" step="50" required></label>
+        <label class="f span2">Описание <textarea class="input" name="desc"></textarea></label>
+        <label class="f span2">Состав (через запятую) <textarea class="input" name="ingredients" placeholder="например: эспрессо, молоко, сахар"></textarea></label>
+        <div class="f span2">Аллергены в блюде
+          <div class="checks" id="allergenChecks"></div>
+        </div>
+        <label class="f">Категория <select class="input" name="category" id="catSel"></select></label>
+        <label class="f">Острота
+          <select class="input" name="spice">
+            <option value="0">0 — не острое</option>
+            <option value="1">1 — слабо 🌶</option>
+            <option value="2">2 — средне 🌶🌶</option>
+            <option value="3">3 — очень 🌶🌶🌶</option>
+          </select>
+        </label>
+        <label class="f">Подача
+          <select class="input" name="temp"><option value="hot">Горячее 🔥</option><option value="cold">Холодное ❄️</option></select>
+        </label>
+        <label class="f" style="justify-content:flex-end"><span class="checks"><label><input type="checkbox" name="sweet"> Сладкое 🍬</label><label><input type="checkbox" name="available" checked> В наличии</label></span></label>
+        <div class="f span2">Подходит для настроений
+          <div class="checks" id="moodChecks"></div>
+        </div>
+        <div class="f span2">Фото блюда (необязательно, пока вместо него показывается смайлик)
+          <div class="photo-box">
+            <img class="photo-preview" id="preview" alt="">
+            <div>
+              <input type="file" id="photo" accept="image/jpeg,image/png,image/webp">
+              <div class="hint">JPG, PNG или WEBP, до 5 МБ.</div>
+              <label class="checks" style="margin-top:6px"><label><input type="checkbox" id="removePhoto"> Удалить текущее фото</label></label>
+            </div>
+          </div>
+        </div>
+        <div class="span2">
+          <div class="row-actions">
+            <button class="btn" type="submit" id="saveBtn">Сохранить</button>
+            <button class="btn ghost" type="button" id="cancelBtn" style="display:none">Отмена</button>
+          </div>
+          <div class="msg" id="formMsg"></div>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h2>Блюда в меню</h2>
+      <div id="adminList"></div>
+    </div>
+  </div>
+</div>
+
+<script src="emoji.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

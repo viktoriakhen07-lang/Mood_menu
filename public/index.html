@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MoodMenu — подбор блюда по настроению</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <a class="nav-link" href="admin.html">Админка</a>
+  <div class="eyebrow-mark">☕</div>
+  <h1 class="title">MoodMenu</h1>
+  <p class="tagline">Скажите, какое у вас настроение и сколько готовы потратить — подберём блюдо из нашего меню.</p>
+</header>
+
+<div class="wrap">
+
+  <section class="picker">
+    <div class="step">
+      <div class="step-label">Какое у вас настроение?</div>
+      <div class="choices" id="moodChoices"></div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Сколько готовы потратить?</div>
+      <div class="budget-row">
+        <input type="number" id="budgetInput" class="budget-input" min="0" step="100" inputmode="numeric" placeholder="например, 2500">
+        <span class="budget-currency">₸</span>
+      </div>
+      <div class="hint">Можно оставить пустым — тогда бюджет не учитываем. Если сумма позволяет, предложим комбо.</div>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Как относитесь к острому?</div>
+      <select id="spiceSelect" class="select">
+        <option value="3">Люблю любое 🌶🌶🌶</option>
+        <option value="2">До средней остроты 🌶🌶</option>
+        <option value="1">Только слабо острое 🌶</option>
+        <option value="0">Совсем не острое</option>
+      </select>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Есть аллергия? Включите то, что нужно исключить</div>
+      <div class="allergy-grid" id="allergyChoices"></div>
+      <div class="hint">Блюда с отмеченными аллергенами не попадут ни в подбор, ни в советы ИИ. Состав в меню заполняет администратор, при сильной аллергии уточняйте у официанта.</div>
+      <button type="button" class="linklike" id="resetFb">Сбросить мои оценки блюд 👍👎</button>
+    </div>
+
+    <div class="cta-row">
+      <button class="cta" id="pickBtn" disabled>Подобрать блюдо</button>
+    </div>
+  </section>
+
+  <section class="result">
+    <div class="result-box" id="resultBox">
+      <div class="result-status" id="resultStatus">Подбираем…</div>
+      <div class="pick-list" id="pickList"></div>
+      <div class="total-line" id="totalLine"></div>
+      <div class="result-note" id="resultNote"></div>
+    </div>
+  </section>
+
+  <section class="chat">
+    <div class="menu-head"><h2>Поговорить с ИИ-официантом</h2></div>
+    <div class="chat-box">
+      <div class="chat-log" id="chatLog"></div>
+      <form class="chat-form" id="chatForm">
+        <input class="input" id="chatInput" placeholder="Напишите, как у вас дела…" autocomplete="off" maxlength="500">
+        <button class="btn" type="submit" id="chatSend">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="menu">
+    <div class="menu-head"><h2>Меню</h2></div>
+    <div class="filters" id="filters"></div>
+    <div id="menuRoot"></div>
+  </section>
+
+</div>
+
+<footer>MoodMenu · учебный проект</footer>
+
+<script src="emoji.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
