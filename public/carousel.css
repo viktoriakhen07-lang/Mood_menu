@@ -1,0 +1,77 @@
+/* ===== Карусель блюд в hero (подключается ПОСЛЕ style.css) ===== */
+.hero--home { padding-bottom: 150px; }
+
+.dish-rail {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -118px;
+  height: 250px;
+  overflow: hidden;
+  padding-top: 20px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  z-index: 3;
+}
+.dish-track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  padding: 0 14px;
+  animation: dishScroll var(--dur, 40s) linear infinite;
+  will-change: transform;
+}
+.dish-rail:hover .dish-track,
+.dish-rail:focus-within .dish-track { animation-play-state: paused; }
+
+@keyframes dishScroll {
+  to { transform: translateX(calc(-50% - 14px)); }
+}
+
+.dish-card {
+  flex: 0 0 auto;
+  width: 132px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s ease;
+}
+.dish-card:hover { transform: translateY(-8px) scale(1.05); }
+
+.dish-plate {
+  width: 132px; height: 132px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: #f4f4f6;
+  border: 5px solid #fff;
+  box-shadow: 0 14px 30px rgba(0,0,0,.22);
+  display: grid; place-items: center;
+  font-size: 56px;
+  overflow: hidden;
+}
+.dish-plate img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.dish-name {
+  font: 600 13px/1.25 'Montserrat', sans-serif;
+  color: #2a1a14;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.dish-price {
+  margin-top: 2px;
+  font: 700 13px 'Montserrat', sans-serif;
+  color: #d85a49;
+}
+
+@media (max-width: 640px) {
+  .hero--home { padding-bottom: 130px; }
+  .dish-rail { bottom: -105px; height: 220px; }
+  .dish-card { width: 108px; }
+  .dish-plate { width: 108px; height: 108px; font-size: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dish-rail { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .dish-track { animation: none; }
+}
