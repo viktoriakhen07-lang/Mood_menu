@@ -73,6 +73,8 @@ const ALLERGENS = [
   { id: "морепродукты", label: "Морепродукты", icon: "🦐" },
   { id: "соя", label: "Соя", icon: "🌱" },
   { id: "мёд", label: "Мёд", icon: "🍯" },
+  { id: "цитрусы", label: "Цитрусы", icon: "🍋" },
+   
 ];
 const ALLERGEN_IDS = ALLERGENS.map(a => a.id);
 
