@@ -1,0 +1,177 @@
+/* =====================================================
+   Темы MoodMenu: «светлое дерево» и «тёмный орех»
+   Подключать ПОСЛЕ style.css и carousel.css
+   ===================================================== */
+
+/* ---------- Палитры (переопределяют переменные из style.css) ---------- */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4eadb;            /* страница: светлый дуб */
+  --soft: #ead9bf;          /* панели секций */
+  --card: #fdf8ef;          /* вместо белого: карточки, поля, чипы */
+  --ink: #3a281d;
+  --muted: #7c6652;
+  --line: #d9c3a3;
+  --coral: #b95a35;         /* акцент: медь */
+  --coral-dark: #9a4527;
+  --coral-soft: #f4dfcc;
+  --on-accent: #ffffff;
+  --track: #d9c6a8;
+  --plate-hi: #fffaf0;
+  --plate-lo: #ead9bd;
+  --plate-ring: #fffaf0;
+  --plate-ring2: #d9c3a3;
+  --shadow: 0 14px 34px rgba(87, 52, 24, .14);
+  --shadow-coral: 0 10px 24px rgba(154, 69, 39, .32);
+  --panel-shadow: 0 18px 40px rgba(87, 52, 24, .10);
+  --seam: rgba(110, 70, 34, .07);
+  --grain: rgba(120, 78, 38, .06);
+  --hero-1: #5e3d2b;
+  --hero-2: #3a2418;
+  --footer-bg: #3a2519;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #150e0a;            /* тёмный орех */
+  --soft: #211710;
+  --card: #2d2017;
+  --ink: #f1e4d2;
+  --muted: #b5a089;
+  --line: #4a3426;
+  --coral: #e0933f;         /* акцент: янтарь */
+  --coral-dark: #f0aa5e;
+  --coral-soft: #3d2a1a;
+  --on-accent: #1b110b;
+  --track: #4a3a2d;
+  --plate-hi: #4a3526;
+  --plate-lo: #2c1f16;
+  --plate-ring: #3a291d;
+  --plate-ring2: #5a4230;
+  --shadow: 0 14px 34px rgba(0, 0, 0, .45);
+  --shadow-coral: 0 10px 24px rgba(224, 147, 63, .25);
+  --panel-shadow: 0 18px 40px rgba(0, 0, 0, .35);
+  --seam: rgba(0, 0, 0, .35);
+  --grain: rgba(255, 190, 120, .03);
+  --hero-1: #2e1d13;
+  --hero-2: #120a06;
+  --footer-bg: #0e0805;
+}
+
+/* ---------- Фон страницы: доски с волокнами ---------- */
+body {
+  background-color: var(--bg);
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 158px, var(--seam) 158px 160px),
+    repeating-linear-gradient(90deg, var(--grain) 0 1px, transparent 1px 7px, var(--grain) 7px 9px, transparent 9px 23px),
+    repeating-linear-gradient(90deg, transparent 0 41px, var(--grain) 41px 44px);
+}
+::selection { background: var(--coral); color: var(--on-accent); }
+
+/* ---------- Шапка (дуга сохраняется — это border-radius в style.css) ---------- */
+header.hero {
+  background:
+    radial-gradient(circle at 20% 55%, rgba(224, 132, 70, .30), transparent 38%),
+    radial-gradient(circle at 80% 25%, rgba(242, 180, 90, .18), transparent 42%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .03) 0 2px, transparent 2px 16px),
+    repeating-linear-gradient(90deg, transparent 0 53px, rgba(0, 0, 0, .12) 53px 55px),
+    linear-gradient(180deg, var(--hero-1) 0%, var(--hero-2) 100%);
+}
+
+/* ---------- Кнопки: текст на акценте ---------- */
+.chip.active, button.cta, a.hero-cta, .navlinks a.nav-btn,
+.bubble.me, .btn, .car-arrow:hover {
+  color: var(--on-accent);
+}
+.btn.ghost { color: var(--ink); }
+.btn.danger { color: #c0392b; }
+:root[data-theme="dark"] .btn.danger { color: #f0907f; border-color: #6b3b33; }
+.btn.danger:hover { background: rgba(192, 57, 43, .15); }
+
+/* ---------- Поверхности, которые в style.css были белыми ---------- */
+.chip, .budget-input, .select, .input, .switch, .badge, .fb,
+.result-box, .chat-box, .item, .car-arrow, .panel, .checks label {
+  background: var(--card);
+}
+.chip.active { background: var(--coral); }
+.btn { background: var(--coral); }
+.btn.ghost { background: transparent; }
+.btn.danger { background: transparent; }
+
+.panel, .result-box { border-color: var(--line); }
+.panel-soft {
+  background:
+    repeating-linear-gradient(90deg, var(--grain) 0 1px, transparent 1px 9px),
+    var(--soft);
+  box-shadow: inset 0 0 0 1px var(--line), var(--panel-shadow);
+}
+.item { box-shadow: var(--shadow), inset 0 0 0 1px var(--line); }
+
+.switch .track { background: var(--track); }
+.switch input:checked + .track { background: var(--coral); }
+.car-dot { background: var(--track); }
+.car-dot.on { background: var(--coral); }
+.fb[data-fb="dislike"].on { background: var(--soft); }
+.thumb, .dish-plate {
+  background: radial-gradient(circle at 35% 28%, var(--plate-hi), var(--plate-lo) 75%);
+}
+.thumb {
+  box-shadow: inset 0 0 0 4px var(--plate-ring), inset 0 0 0 5px var(--plate-ring2), 0 10px 22px rgba(0, 0, 0, .18);
+}
+.item .thumb { box-shadow: inset 0 0 0 5px var(--plate-ring), inset 0 0 0 6px var(--plate-ring2), 0 10px 22px rgba(0, 0, 0, .18); }
+
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: .8; }
+select option { background: var(--card); color: var(--ink); }
+
+/* ---------- Карусель блюд в шапке ---------- */
+.dish-plate { border-color: var(--card); }
+.dish-name { color: var(--ink); }
+.dish-price { color: var(--coral); }
+
+/* ---------- Подвал: тёмное дерево в обеих темах ---------- */
+footer.site-footer {
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 9px),
+    var(--footer-bg);
+  color: #e8d7c0;
+  box-shadow: inset 0 3px 0 rgba(185, 133, 86, .55), var(--panel-shadow);
+}
+.foot-col h5, .foot-col a.brand { color: #f3e6d2; }
+.foot-col p, .foot-col a { color: #c9b49a; }
+.foot-col a:hover { color: var(--coral-dark); }
+:root[data-theme="light"] .foot-col a:hover { color: #f0aa5e; }
+
+/* ---------- Переключатель темы ---------- */
+.theme-toggle {
+  display: inline-grid; place-items: center;
+  width: 40px; height: 40px; padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 235, 210, .35);
+  background: rgba(255, 235, 210, .12);
+  color: #fff;
+  font-size: 18px; line-height: 1;
+  font-family: var(--emoji);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform .25s ease, background .2s;
+}
+.theme-toggle:hover { background: rgba(255, 235, 210, .24); transform: rotate(18deg) scale(1.06); }
+/* на страницах без меню (админка) — плавающая кнопка внизу справа */
+.theme-toggle.floating {
+  position: fixed; z-index: 50;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: 46px; height: 46px;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.theme-toggle.floating:hover { background: var(--soft); }
+
+/* плавная смена темы */
+html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after {
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease !important;
+}
