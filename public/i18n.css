@@ -1,0 +1,39 @@
+/* Переключатель языка RU / ҚАЗ / EN (подключать после style.css и theme.css) */
+.lang-switch {
+  display: inline-flex; gap: 2px; padding: 3px;
+  border-radius: 999px;
+  background: rgba(255, 235, 210, .12);
+  border: 1px solid rgba(255, 235, 210, .3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.lang-switch button {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  color: rgba(255, 255, 255, .85);
+  font: 600 11px/1 var(--sans, sans-serif);
+  letter-spacing: .3px;
+  padding: 8px 10px; border-radius: 999px;
+  transition: background .2s, color .2s;
+}
+.lang-switch button:hover { background: rgba(255, 255, 255, .15); }
+.lang-switch button[aria-pressed="true"] {
+  background: var(--coral, #e8604c);
+  color: var(--on-accent, #fff);
+}
+/* на страницах без меню (админка) — плавающий переключатель внизу справа */
+.lang-switch.floating {
+  position: fixed; z-index: 50;
+  right: 72px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  background: var(--card, #fff);
+  border-color: var(--line, #e6e8ee);
+  box-shadow: var(--shadow, 0 8px 22px rgba(0, 0, 0, .15));
+}
+.lang-switch.floating button { color: var(--ink, #1d1c25); }
+.lang-switch.floating button:hover { background: var(--soft, #f6f7fa); }
+.lang-switch.floating button[aria-pressed="true"] { color: var(--on-accent, #fff); background: var(--coral, #e8604c); }
+
+@media (max-width: 760px) {
+  .navlinks .lang-switch, .navlinks .theme-toggle { margin-right: 6px; }
+  .lang-switch button { padding: 7px 8px; font-size: 10px; }
+}
